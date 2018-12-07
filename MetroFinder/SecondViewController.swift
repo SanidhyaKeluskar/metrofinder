@@ -9,7 +9,7 @@
 import UIKit
 
 class SecondViewController: UITableViewController {
-
+    let wmata=WmataAPI()
     let cellID="CellID"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,12 @@ class SecondViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles=true
 
        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+      //  var namesofStation: [String]
+        wmata.fetchMetroStations()
+       
+     //  for name in namesofStation{
+    //       print(name)
+    //  }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -9,19 +9,39 @@
 import Foundation
 
 struct SomeThing : Decodable{
-    let Station : [StationInfo]
+    let Stations : [StationInfo]
     
 }
 struct StationInfo : Decodable{
-    let name : String
+    let Name : String?
+   let Code: String?
+   let StationTogether1 : String?
+   let StationTogether2 : String?
+   let LineCode1 : String?
+   let LineCode2 : String?
+   let LineCode3 : String?
+   let LineCode4 : String?
+   let Lat : float_t?
+   let Lon : float_t?
+    let Address : AddressOne?
 }
 
-class WmataAPIManager {
+struct AddressOne :Decodable {
+   let Street : String?
+   let City: String?
+   let State: String?
+   let Zip: String?
+}
+
+class WmataAPI {
     
+   
+   // stationNames=[]
     
     func fetchMetroStations() {
-        
-        var urlObj=URLComponents(string: "https://api.wmata.com/Rail.svc/json/jStations")!
+        var stationNames: [String]
+        stationNames=[]
+        let urlObj=URLComponents(string: "https://api.wmata.com/Rail.svc/json/jStations")!
         let url = urlObj.url!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -32,13 +52,13 @@ class WmataAPIManager {
             
             guard let response = response as? HTTPURLResponse else {
                 
-            //    self.delegate?.gymsNotFound(reason: .noResponse)
+                //    self.delegate?.gymsNotFound(reason: .noResponse)
                 
                 return
             }
             
             guard response.statusCode == 200 else {
-             //   self.delegate?.gymsNotFound(reason: .non200Response)
+                //   self.delegate?.gymsNotFound(reason: .non200Response)
                 
                 return
             }
@@ -46,28 +66,39 @@ class WmataAPIManager {
             //HERE - response is NOT nil and IS 200
             
             guard let data = data else {
-              //  self.delegate?.gymsNotFound(reason: .noData)//
+                //  self.delegate?.gymsNotFound(reason: .noData)//
                 
                 return
             }
             
             do{
-                let something=try JSONDecoder().decode(SomeThing.self, from: data)
-                print(something.Station)
+                let someThing=try JSONDecoder().decode(SomeThing.self, from: data)
+               // print(something.Stations[0])
+                
+                for value in someThing.Stations{
+                stationNames.append(value.Name!)
+              }
+                
+              for name in stationNames{
+               // print("INnfjbfjdbfdbf")
+                  print(name)
+              }
+                
+                
             }
             catch let error {
                 //if we get here, need to set a breakpoint and inspect the error to see where there is a mismatch between JSON and our Codable model structs
-                print(error.localizedDescription)
+                print(error)
                 
-               // self.delegate?.gymsNotFound(reason: .badData)
+                // self.delegate?.gymsNotFound(reason: .badData)
             }
         }
         
         task.resume()
         
         
+       
         
         
-        
-}
+    }
 }
