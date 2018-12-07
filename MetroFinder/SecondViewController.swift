@@ -10,40 +10,44 @@ import UIKit
 
 class SecondViewController: UITableViewController {
     let wmata=WmataAPI()
+    var stationNames = [String]()
     let cellID="CellID"
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title="Metro Stations"
         navigationController?.navigationBar.prefersLargeTitles=true
-
+ 
        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
-      //  var namesofStation: [String]
-        wmata.fetchMetroStations()
-       
-     //  for name in namesofStation{
-    //       print(name)
-    //  }
+     
+        wmata.fetchMetroStations(){(results:SomeThing) in
+            for value in results.Stations{
+                self.stationNames.append(value.Name!)
+            }
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+            
+            for name in self.stationNames{
+                
+                print(name)
+            }
+            
+        }
+   
+    
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return stationNames.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
-        cell.textLabel?.text="HI THERE"
+        let name=self.stationNames[indexPath.row]
+        cell.textLabel?.text = name
         return cell
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
