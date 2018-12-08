@@ -8,6 +8,7 @@
 
 import UIKit
 
+var myindex=0
 class SecondViewController: UITableViewController {
     let wmata=WmataAPI()
     var stationNames = [String]()
@@ -46,6 +47,11 @@ class SecondViewController: UITableViewController {
         let name=self.stationNames[indexPath.row]
         cell.textLabel?.text = name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myindex=indexPath.row
+        performSegue(withIdentifier: "seguetwo", sender: self)
     }
 
 
