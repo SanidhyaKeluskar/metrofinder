@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */; };
+		1A59EE5B21BCC9E8005FFA89 /* YelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */; };
+		1A59EE5D21BCCC9A005FFA89 /* YelpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */; };
+		1A59EE5F21BCD06D005FFA89 /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */; };
 		1A5BC6E921ACF7E6001F39FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */; };
 		1A5BC6EB21ACF7E6001F39FF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */; };
 		1A5BC6ED21ACF7E6001F39FF /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6EC21ACF7E6001F39FF /* DataViewController.swift */; };
@@ -24,6 +27,9 @@
 
 /* Begin PBXFileReference section */
 		1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestTableViewController.swift; sourceTree = "<group>"; };
+		1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpTableViewController.swift; sourceTree = "<group>"; };
+		1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpResponse.swift; sourceTree = "<group>"; };
+		1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		1A5BC6E521ACF7E6001F39FF /* MetroFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 				1ADE64D421BA18EC003F5FEB /* WmataAPI.swift */,
 				1ADE64D921BC68A8003F5FEB /* LocationManager.swift */,
 				1ADE64DB21BC6D3C003F5FEB /* HomeViewController.swift */,
+				1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */,
+				1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */,
 			);
 			path = MetroFinder;
 			sourceTree = "<group>";
@@ -92,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1ADE64D721BA5DA3003F5FEB /* WmataResponse.swift */,
+				1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,15 +177,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A5BC6EB21ACF7E6001F39FF /* RootViewController.swift in Sources */,
+				1A59EE5F21BCD06D005FFA89 /* YelpAPI.swift in Sources */,
 				1A5BC6EF21ACF7E6001F39FF /* ModelController.swift in Sources */,
 				1A5BC6ED21ACF7E6001F39FF /* DataViewController.swift in Sources */,
 				1ADE64D121B9F710003F5FEB /* SecondViewController.swift in Sources */,
 				1ADE64DA21BC68A8003F5FEB /* LocationManager.swift in Sources */,
 				1ADE64DC21BC6D3C003F5FEB /* HomeViewController.swift in Sources */,
+				1A59EE5D21BCCC9A005FFA89 /* YelpResponse.swift in Sources */,
 				1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */,
 				1A5BC6E921ACF7E6001F39FF /* AppDelegate.swift in Sources */,
 				1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */,
 				1ADE64D521BA18EC003F5FEB /* WmataAPI.swift in Sources */,
+				1A59EE5B21BCC9E8005FFA89 /* YelpTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

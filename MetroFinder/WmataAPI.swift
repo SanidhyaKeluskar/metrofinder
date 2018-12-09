@@ -12,9 +12,6 @@ import Foundation
 var  xxxx = [String]()
 class WmataAPI {
 
-   
-
-    
     func fetchMetroStations(completion:@escaping(SomeThing)->()) {
      
         var somethingxx:SomeThing!
@@ -37,8 +34,6 @@ class WmataAPI {
                 
                 return
             }
-            
-            
             
             guard let data = data else {
                 
