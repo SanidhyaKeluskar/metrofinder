@@ -20,8 +20,8 @@ struct StationInfo : Codable{
     let LineCode2 : String?
     let LineCode3 : String?
     let LineCode4 : String?
-    let Lat : float_t?
-    let Lon : float_t?
+    let Lat : Double?
+    let Lon : Double?
     let Address : AddressOne?
 }
 

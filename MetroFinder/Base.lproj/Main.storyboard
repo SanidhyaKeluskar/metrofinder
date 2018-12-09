@@ -26,19 +26,36 @@
                                     <constraint firstAttribute="width" constant="130" id="dQi-Pl-VQv"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="v8g-7V-tob"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Select Station">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="otc-MH-PQt" kind="show" id="JY1-Op-tgL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-ED-ZXa">
+                                <rect key="frame" x="101" y="522.5" width="212" height="41"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kDw-ED-ZXa" secondAttribute="height" multiplier="130:41" id="1Mw-qT-h8P"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="PpU-iz-GSA"/>
+                                    <constraint firstAttribute="width" constant="130" id="m5r-lc-NgI"/>
+                                </constraints>
+                                <state key="normal" title="Nearest">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="00B-eo-t8u" kind="show" id="xWE-mR-LKb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kDw-ED-ZXa" firstAttribute="top" secondItem="xbp-vq-ta1" secondAttribute="bottom" constant="27" id="Uoh-Ja-N1t"/>
                             <constraint firstItem="xbp-vq-ta1" firstAttribute="centerX" secondItem="9RD-rW-z5b" secondAttribute="centerX" id="VDk-8k-UBa"/>
                             <constraint firstItem="9RD-rW-z5b" firstAttribute="trailing" secondItem="xbp-vq-ta1" secondAttribute="trailing" constant="142" id="bTy-3W-nn1"/>
                             <constraint firstItem="xbp-vq-ta1" firstAttribute="centerY" secondItem="9RD-rW-z5b" secondAttribute="centerY" id="lyu-91-26b"/>
+                            <constraint firstItem="kDw-ED-ZXa" firstAttribute="width" secondItem="kDw-ED-ZXa" secondAttribute="height" multiplier="130:41" id="qKi-s1-Sii"/>
                             <constraint firstItem="xbp-vq-ta1" firstAttribute="leading" secondItem="9RD-rW-z5b" secondAttribute="leading" constant="142" id="zjr-fw-RNE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9RD-rW-z5b"/>
@@ -79,6 +96,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRD-2G-fDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1652" y="-705"/>
+        </scene>
+        <!--Nearest Table View Controller-->
+        <scene sceneID="0xS-oH-BKO">
+            <objects>
+                <tableViewController id="00B-eo-t8u" customClass="NearestTableViewController" customModule="MetroFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gbh-rZ-8v6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TsR-a4-hLT">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TsR-a4-hLT" id="CoD-t6-rSH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="00B-eo-t8u" id="7TN-Xe-ClS"/>
+                            <outlet property="delegate" destination="00B-eo-t8u" id="xmq-1X-24n"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wy7-f7-8hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1358" y="-121"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="3NU-GO-fWl">

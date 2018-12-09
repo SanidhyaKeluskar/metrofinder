@@ -13,7 +13,7 @@ import MapKit
 protocol LocationDetectorDelegate {
     func locationDetected(latitude: Double, longitude: Double)
     func locationNotDetected() //no GPS/network signal for 5 seconds (timeout) OR no permission (TODO: implement timeout)
-    func locationZipCode(zipcode : Int)
+    func locationZipCode(zipcode : String)
 }
 
 class LocationDetector: NSObject {
@@ -49,15 +49,27 @@ class LocationDetector: NSObject {
 extension LocationDetector: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        var uzc=""
         //do something with the location
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
             
-            delegate?.locationDetected(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        delegate?.locationDetected(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {( placemark,Error) in
-            print(placemark?[0].postalCode)
-        })
+            if placemark?[0].postalCode != nil {
+                
+                uzc=(placemark?[0].postalCode)!
+                
+                self.delegate?.locationZipCode(zipcode: uzc)
+            } else {
+                //  print("Doesn’t contain a value.")
+            }
+            })
+            
+            
+            
+            
             
           //  delegate?.locationZipCode(zipcode: myzipcode)
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */; };
 		1A5BC6E921ACF7E6001F39FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */; };
 		1A5BC6EB21ACF7E6001F39FF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */; };
 		1A5BC6ED21ACF7E6001F39FF /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6EC21ACF7E6001F39FF /* DataViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestTableViewController.swift; sourceTree = "<group>"; };
 		1A5BC6E521ACF7E6001F39FF /* MetroFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				1ADE64D621BA5D7D003F5FEB /* Models */,
 				1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */,
 				1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */,
+				1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */,
 				1A5BC6EC21ACF7E6001F39FF /* DataViewController.swift */,
 				1A5BC6EE21ACF7E6001F39FF /* ModelController.swift */,
 				1A5BC6F021ACF7E6001F39FF /* Main.storyboard */,
@@ -170,6 +173,7 @@
 				1ADE64D121B9F710003F5FEB /* SecondViewController.swift in Sources */,
 				1ADE64DA21BC68A8003F5FEB /* LocationManager.swift in Sources */,
 				1ADE64DC21BC6D3C003F5FEB /* HomeViewController.swift in Sources */,
+				1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */,
 				1A5BC6E921ACF7E6001F39FF /* AppDelegate.swift in Sources */,
 				1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */,
 				1ADE64D521BA18EC003F5FEB /* WmataAPI.swift in Sources */,
