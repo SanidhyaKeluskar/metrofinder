@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class YelpAPI {
-    func fetchlandmarks(completion:@escaping(yelpres)->()) {
+    func fetchlandmarks(selectedStationName : String, completion:@escaping(yelpres)->()) {
         
         var xxttt:yelpres!
         
         var urlObj=URLComponents(string: "https://api.yelp.com/v3/businesses/search")
         
         let queryItemToken = URLQueryItem(name: "term", value: "food")
-        let queryItemQuery = URLQueryItem(name: "location", value: "foggy bottom")
+        let queryItemQuery = URLQueryItem(name: "location", value: selectedStationName)
         
         urlObj!.queryItems = [queryItemToken, queryItemQuery]
         
@@ -50,7 +50,7 @@ class YelpAPI {
                 
                 xxttt=yelpjson
                 
-                print(xxttt)
+             //   print(xxttt)
                 
             }
                 
