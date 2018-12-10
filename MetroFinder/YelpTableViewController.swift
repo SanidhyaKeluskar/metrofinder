@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SVProgressHUD
 
+var landmarkNames = [String]()
 class YelpTableViewController: UITableViewController {
     
     let cellID="CellID"
     let yelapi=YelpAPI()
-    var landmarkNames = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title="Landmarks Nearby"
@@ -20,11 +22,15 @@ class YelpTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         
+        SVProgressHUD.show(withStatus: "Loading")
+        
         yelapi.fetchlandmarks(selectedStationName: stationNames[myindex]){(results:yelpres) in
             
             for value in results.businesses{
-                self.landmarkNames.append(value.name!)
+                landmarkNames.append(value.name!)
             }
+            
+            SVProgressHUD.dismiss()
             DispatchQueue.main.async{
                 self.tableView.reloadData()
             }
@@ -35,7 +41,7 @@ class YelpTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        let name=self.landmarkNames[indexPath.row]
+        let name=landmarkNames[indexPath.row]
         cell.textLabel?.text = name
         return cell
     }
@@ -43,6 +49,11 @@ class YelpTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return landmarkNames.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myindex=indexPath.row
+        performSegue(withIdentifier: "seguetolast", sender: self)
     }
 
     /*

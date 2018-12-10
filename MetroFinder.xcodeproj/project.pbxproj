@@ -11,6 +11,7 @@
 		1A59EE5B21BCC9E8005FFA89 /* YelpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */; };
 		1A59EE5D21BCCC9A005FFA89 /* YelpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */; };
 		1A59EE5F21BCD06D005FFA89 /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */; };
+		1A59EE6121BDD14C005FFA89 /* LandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE6021BDD14C005FFA89 /* LandmarkViewController.swift */; };
 		1A5BC6E921ACF7E6001F39FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */; };
 		1A5BC6EB21ACF7E6001F39FF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */; };
 		1A5BC6ED21ACF7E6001F39FF /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5BC6EC21ACF7E6001F39FF /* DataViewController.swift */; };
@@ -23,13 +24,17 @@
 		1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE64D721BA5DA3003F5FEB /* WmataResponse.swift */; };
 		1ADE64DA21BC68A8003F5FEB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE64D921BC68A8003F5FEB /* LocationManager.swift */; };
 		1ADE64DC21BC6D3C003F5FEB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE64DB21BC6D3C003F5FEB /* HomeViewController.swift */; };
+		D7C8DCDB6D779E4049AD6A05 /* Pods_MetroFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2450777E5D7D70FD08848F /* Pods_MetroFinder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2450777E5D7D70FD08848F /* Pods_MetroFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetroFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BD9A549DBD509240C8F7742 /* Pods-MetroFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetroFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetroFinder/Pods-MetroFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestTableViewController.swift; sourceTree = "<group>"; };
 		1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpTableViewController.swift; sourceTree = "<group>"; };
 		1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpResponse.swift; sourceTree = "<group>"; };
 		1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
+		1A59EE6021BDD14C005FFA89 /* LandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
 		1A5BC6E521ACF7E6001F39FF /* MetroFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		1ADE64D721BA5DA3003F5FEB /* WmataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WmataResponse.swift; sourceTree = "<group>"; };
 		1ADE64D921BC68A8003F5FEB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1ADE64DB21BC6D3C003F5FEB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E12D3153B7E6BE2204E08135 /* Pods-MetroFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetroFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetroFinder/Pods-MetroFinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C8DCDB6D779E4049AD6A05 /* Pods_MetroFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,8 @@
 			children = (
 				1A5BC6E721ACF7E6001F39FF /* MetroFinder */,
 				1A5BC6E621ACF7E6001F39FF /* Products */,
+				AFA7AAA3655EEEB4B38172DA /* Pods */,
+				B5624147E745B3E781903B0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +101,7 @@
 				1ADE64DB21BC6D3C003F5FEB /* HomeViewController.swift */,
 				1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */,
 				1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */,
+				1A59EE6021BDD14C005FFA89 /* LandmarkViewController.swift */,
 			);
 			path = MetroFinder;
 			sourceTree = "<group>";
@@ -105,6 +115,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		AFA7AAA3655EEEB4B38172DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BD9A549DBD509240C8F7742 /* Pods-MetroFinder.debug.xcconfig */,
+				E12D3153B7E6BE2204E08135 /* Pods-MetroFinder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B5624147E745B3E781903B0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A2450777E5D7D70FD08848F /* Pods_MetroFinder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A5BC6FB21ACF7E8001F39FF /* Build configuration list for PBXNativeTarget "MetroFinder" */;
 			buildPhases = (
+				C5BB7695244E55D6161096F7 /* [CP] Check Pods Manifest.lock */,
 				1A5BC6E121ACF7E6001F39FF /* Sources */,
 				1A5BC6E221ACF7E6001F39FF /* Frameworks */,
 				1A5BC6E321ACF7E6001F39FF /* Resources */,
+				3EDB738EBF412F7B4B8FCB34 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +200,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EDB738EBF412F7B4B8FCB34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MetroFinder/Pods-MetroFinder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetroFinder/Pods-MetroFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5BB7695244E55D6161096F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MetroFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1A5BC6E121ACF7E6001F39FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -184,6 +266,7 @@
 				1ADE64DA21BC68A8003F5FEB /* LocationManager.swift in Sources */,
 				1ADE64DC21BC6D3C003F5FEB /* HomeViewController.swift in Sources */,
 				1A59EE5D21BCCC9A005FFA89 /* YelpResponse.swift in Sources */,
+				1A59EE6121BDD14C005FFA89 /* LandmarkViewController.swift in Sources */,
 				1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */,
 				1A5BC6E921ACF7E6001F39FF /* AppDelegate.swift in Sources */,
 				1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */,
@@ -332,6 +415,7 @@
 		};
 		1A5BC6FC21ACF7E8001F39FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD9A549DBD509240C8F7742 /* Pods-MetroFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -350,6 +434,7 @@
 		};
 		1A5BC6FD21ACF7E8001F39FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E12D3153B7E6BE2204E08135 /* Pods-MetroFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

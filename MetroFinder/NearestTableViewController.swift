@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
 var mysecondindex=0
 var zippp=""
@@ -15,22 +16,7 @@ var userlatitude : Double = 0.0
 var userlongitude : Double = 0.0
 var  coordinatetwo = CLLocation(latitude: 0.0, longitude: 0.0)
 
-class NearestTableViewController: UITableViewController, LocationDetectorDelegate {
-    
-    func locationDetected(latitude: Double, longitude: Double) {
-       userlatitude=latitude
-       userlongitude=longitude
-     coordinatetwo = CLLocation(latitude: userlatitude, longitude: userlongitude)
-    }
-    
-    func locationNotDetected() {
-      //  <#code#>
-    }
-    
-    func locationZipCode(zipcode: String) {
-        zippp=zipcode
-        print(zippp)
-    }
+class NearestTableViewController: UITableViewController {
     
     let wmata=WmataAPI()
     let locationDetector = LocationDetector()
@@ -38,42 +24,27 @@ class NearestTableViewController: UITableViewController, LocationDetectorDelegat
     var stationNames = [String]()
     let cellID="CellID"
     override func viewDidLoad() {
-     //   locationDetector.delegate = (self as! LocationDetectorDelegate)
+  
         
         super.viewDidLoad()
+        
         locationDetector.delegate = (self as LocationDetectorDelegate)
+        locationDetector.findLocation()
         
         let userlocation = HomeViewController()
         
-        print(userlocation.userZipCode)
+        
+     
         navigationItem.title="Nearest Station"
         navigationController?.navigationBar.prefersLargeTitles=true
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         
-        wmata.fetchMetroStations(){(results:SomeThing) in
-            for value in results.Stations{
-                var stationlat=value.Lat
-                var stationlon=value.Lon
-                
-                var coordinateone = CLLocation(latitude: stationlat!, longitude: stationlon!)
+        SVProgressHUD.show(withStatus: "Loading")
+        
+        
+        if(userlatitude>0.0){
             
-                var distanceInMeters = coordinateone.distance(from: coordinatetwo)
-                
-                if (distanceInMeters <= 402.336){
-                    self.stationNames.append(value.Name!)
-                }
-                
-            }
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
-            
-            for name in self.stationNames{
-                
-                print(name)
-            }
-            
+            fetchxxxx( )
         }
         
         
@@ -91,8 +62,75 @@ class NearestTableViewController: UITableViewController, LocationDetectorDelegat
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mysecondindex=indexPath.row
-       // performSegue(withIdentifier: "seguetwo", sender: self)
+     
+    }
+    
+    func fetchxxxx( )
+    {
+        
+   
+        SVProgressHUD.dismiss()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        
+        
+        wmata.fetchMetroStations(){(results:SomeThing) in
+            for value in results.Stations{
+                var stationlat=value.Lat
+                var stationlon=value.Lon
+                
+                var coordinateone = CLLocation(latitude: stationlat!, longitude: stationlon!)
+                
+                
+                var distanceInMeters = coordinateone.distance(from: coordinatetwo)
+                
+                if (distanceInMeters <= 1402.336){
+                    self.stationNames.append(value.Name!)
+                }
+                
+            }
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+            
+            for name in self.stationNames{
+                
+                print(name)
+            }
+            
+        }
     }
     
 
+}
+
+
+extension NearestTableViewController: LocationDetectorDelegate {
+    func locationDetected(latitude: Double, longitude: Double) {
+        print(latitude)
+        print(longitude)
+        userlatitude=latitude
+        userlongitude=longitude
+        coordinatetwo = CLLocation(latitude: userlatitude, longitude: userlongitude)
+        
+        
+        DispatchQueue.main.async {
+                //TODO: Show a AlertController with error
+        
+            self.fetchxxxx()
+        
+        }
+        
+    }
+    
+    func locationNotDetected() {
+        print("no location found :(")
+        
+        //TODO: Show a AlertController with error
+    }
+    
+    func locationZipCode(zipcode : String){
+        
+    }
+    
+    
 }
