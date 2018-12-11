@@ -1,59 +1,65 @@
 //
-//  YelpTableViewController.swift
+//  FavouritesTableViewController.swift
 //  MetroFinder
 //
-//  Created by sanidhya on 12/8/18.
+//  Created by sanidhya on 12/10/18.
 //  Copyright © 2018 sanidhya. All rights reserved.
 //
 
 import UIKit
-import SVProgressHUD
 
-var landmarkNames = [String]()
-class YelpTableViewController: UITableViewController {
-    
-    let cellID="CellID"
-    let yelapi=YelpAPI()
-    
+class FavouritesTableViewController: UITableViewController {
+//let workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+var workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+    let cellThreeID="CellIDTWOOne"
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        navigationItem.title="Landmarks Nearby"
-        navigationController?.navigationBar.prefersLargeTitles=true
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
-        
-        SVProgressHUD.show(withStatus: "Loading")
-        
-        yelapi.fetchlandmarks(selectedStationName: stationNames[myindex]){(results:yelpres) in
-            
-            for value in results.businesses{
-                landmarkNames.append(value.name!)
-            }
-            
-            SVProgressHUD.dismiss()
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellThreeID)
+        landmarkNames.removeAll()
+        landmarkImages.removeAll()
+        for value in workoutstwo{
+            landmarkNames.append(value.name)
+            landmarkImages.append(value.url)
         }
-    }
 
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        let name=landmarkNames[indexPath.row]
-        cell.textLabel?.text = name
-        return cell
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+        super.viewWillAppear(animated) // No need for semicolon
+        print("hiiiii")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellThreeID)
+        
+        tableView.reloadData()
+        
+    }
+    
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return landmarkNames.count
+        return workoutstwo.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellThreeID, for: indexPath)
+        
+        // Configure the cell...
+        cell.textLabel?.text = String(workoutstwo[indexPath.row].name)
+        
+        return cell
+
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex=indexPath.row
-        performSegue(withIdentifier: "seguetolast", sender: self)
+        performSegue(withIdentifier: "SegueFour", sender: self)
     }
 
     /*

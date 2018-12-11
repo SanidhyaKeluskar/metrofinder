@@ -22,6 +22,8 @@ class SecondViewController: UITableViewController {
  
        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
      
+        stationNames.removeAll()
+        
         wmata.fetchMetroStations(){(results:SomeThing) in
             for value in results.Stations{
                 stationNames.append(value.Name!)

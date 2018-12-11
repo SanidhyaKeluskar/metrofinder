@@ -19,6 +19,9 @@
 		1A5BC6F221ACF7E6001F39FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BC6F021ACF7E6001F39FF /* Main.storyboard */; };
 		1A5BC6F421ACF7E8001F39FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BC6F321ACF7E8001F39FF /* Assets.xcassets */; };
 		1A5BC6F721ACF7E8001F39FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5BC6F521ACF7E8001F39FF /* LaunchScreen.storyboard */; };
+		1AC9280B21BF373600DA24E3 /* FavouriteLandMarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9280A21BF373600DA24E3 /* FavouriteLandMarkModel.swift */; };
+		1AC9280D21BF380A00DA24E3 /* PeristenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9280C21BF380A00DA24E3 /* PeristenceManager.swift */; };
+		1AC9280F21BF62C000DA24E3 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9280E21BF62C000DA24E3 /* FavouritesTableViewController.swift */; };
 		1ADE64D121B9F710003F5FEB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE64D021B9F710003F5FEB /* SecondViewController.swift */; };
 		1ADE64D521BA18EC003F5FEB /* WmataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE64D421BA18EC003F5FEB /* WmataAPI.swift */; };
 		1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE64D721BA5DA3003F5FEB /* WmataResponse.swift */; };
@@ -44,6 +47,9 @@
 		1A5BC6F321ACF7E8001F39FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A5BC6F621ACF7E8001F39FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A5BC6F821ACF7E8001F39FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AC9280A21BF373600DA24E3 /* FavouriteLandMarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteLandMarkModel.swift; sourceTree = "<group>"; };
+		1AC9280C21BF380A00DA24E3 /* PeristenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeristenceManager.swift; sourceTree = "<group>"; };
+		1AC9280E21BF62C000DA24E3 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
 		1ADE64D021B9F710003F5FEB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1ADE64D421BA18EC003F5FEB /* WmataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WmataAPI.swift; sourceTree = "<group>"; };
 		1ADE64D721BA5DA3003F5FEB /* WmataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WmataResponse.swift; sourceTree = "<group>"; };
@@ -85,25 +91,43 @@
 		1A5BC6E721ACF7E6001F39FF /* MetroFinder */ = {
 			isa = PBXGroup;
 			children = (
+				1ACB8DBB21BE19DD009DE18B /* Managers */,
+				1ACB8DBA21BE19C6009DE18B /* View Controllers */,
 				1ADE64D621BA5D7D003F5FEB /* Models */,
 				1A5BC6E821ACF7E6001F39FF /* AppDelegate.swift */,
 				1A5BC6EA21ACF7E6001F39FF /* RootViewController.swift */,
-				1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */,
 				1A5BC6EC21ACF7E6001F39FF /* DataViewController.swift */,
 				1A5BC6EE21ACF7E6001F39FF /* ModelController.swift */,
 				1A5BC6F021ACF7E6001F39FF /* Main.storyboard */,
 				1A5BC6F321ACF7E8001F39FF /* Assets.xcassets */,
 				1A5BC6F521ACF7E8001F39FF /* LaunchScreen.storyboard */,
 				1A5BC6F821ACF7E8001F39FF /* Info.plist */,
-				1ADE64D021B9F710003F5FEB /* SecondViewController.swift */,
-				1ADE64D421BA18EC003F5FEB /* WmataAPI.swift */,
-				1ADE64D921BC68A8003F5FEB /* LocationManager.swift */,
-				1ADE64DB21BC6D3C003F5FEB /* HomeViewController.swift */,
-				1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */,
-				1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */,
-				1A59EE6021BDD14C005FFA89 /* LandmarkViewController.swift */,
 			);
 			path = MetroFinder;
+			sourceTree = "<group>";
+		};
+		1ACB8DBA21BE19C6009DE18B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE64DB21BC6D3C003F5FEB /* HomeViewController.swift */,
+				1A59EE5A21BCC9E8005FFA89 /* YelpTableViewController.swift */,
+				1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */,
+				1A59EE6021BDD14C005FFA89 /* LandmarkViewController.swift */,
+				1ADE64D021B9F710003F5FEB /* SecondViewController.swift */,
+				1AC9280E21BF62C000DA24E3 /* FavouritesTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1ACB8DBB21BE19DD009DE18B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */,
+				1ADE64D921BC68A8003F5FEB /* LocationManager.swift */,
+				1ADE64D421BA18EC003F5FEB /* WmataAPI.swift */,
+				1AC9280C21BF380A00DA24E3 /* PeristenceManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		1ADE64D621BA5D7D003F5FEB /* Models */ = {
@@ -111,6 +135,7 @@
 			children = (
 				1ADE64D721BA5DA3003F5FEB /* WmataResponse.swift */,
 				1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */,
+				1AC9280A21BF373600DA24E3 /* FavouriteLandMarkModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +286,8 @@
 				1A5BC6EB21ACF7E6001F39FF /* RootViewController.swift in Sources */,
 				1A59EE5F21BCD06D005FFA89 /* YelpAPI.swift in Sources */,
 				1A5BC6EF21ACF7E6001F39FF /* ModelController.swift in Sources */,
+				1AC9280F21BF62C000DA24E3 /* FavouritesTableViewController.swift in Sources */,
+				1AC9280B21BF373600DA24E3 /* FavouriteLandMarkModel.swift in Sources */,
 				1A5BC6ED21ACF7E6001F39FF /* DataViewController.swift in Sources */,
 				1ADE64D121B9F710003F5FEB /* SecondViewController.swift in Sources */,
 				1ADE64DA21BC68A8003F5FEB /* LocationManager.swift in Sources */,
@@ -272,6 +299,7 @@
 				1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */,
 				1ADE64D521BA18EC003F5FEB /* WmataAPI.swift in Sources */,
 				1A59EE5B21BCC9E8005FFA89 /* YelpTableViewController.swift in Sources */,
+				1AC9280D21BF380A00DA24E3 /* PeristenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,15 +21,16 @@ class NearestTableViewController: UITableViewController {
     let wmata=WmataAPI()
     let locationDetector = LocationDetector()
     
-    var stationNames = [String]()
-    let cellID="CellID"
+    let cellTwoID="CellIDTWOThreee"
+    
     override func viewDidLoad() {
   
-        
         super.viewDidLoad()
         
         locationDetector.delegate = (self as LocationDetectorDelegate)
         locationDetector.findLocation()
+        
+        
         
         let userlocation = HomeViewController()
         
@@ -41,7 +42,7 @@ class NearestTableViewController: UITableViewController {
         
         SVProgressHUD.show(withStatus: "Loading")
         
-        
+       // stationNames.removeAll()
         if(userlatitude>0.0){
             
             fetchxxxx( )
@@ -54,15 +55,15 @@ class NearestTableViewController: UITableViewController {
         return stationNames.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        let name=self.stationNames[indexPath.row]
+        let cell=tableView.dequeueReusableCell(withIdentifier: cellTwoID, for: indexPath)
+        let name=stationNames[indexPath.row]
         cell.textLabel?.text = name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mysecondindex=indexPath.row
-     
+        myindex=indexPath.row
+        performSegue(withIdentifier: "Seguethree", sender: self)
     }
     
     func fetchxxxx( )
@@ -70,10 +71,11 @@ class NearestTableViewController: UITableViewController {
         
    
         SVProgressHUD.dismiss()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellTwoID)
         
         
         wmata.fetchMetroStations(){(results:SomeThing) in
+             stationNames.removeAll()
             for value in results.Stations{
                 var stationlat=value.Lat
                 var stationlon=value.Lon
@@ -83,8 +85,9 @@ class NearestTableViewController: UITableViewController {
                 
                 var distanceInMeters = coordinateone.distance(from: coordinatetwo)
                 
+                
                 if (distanceInMeters <= 1402.336){
-                    self.stationNames.append(value.Name!)
+                    stationNames.append(value.Name!)
                 }
                 
             }
@@ -92,7 +95,7 @@ class NearestTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             
-            for name in self.stationNames{
+            for name in stationNames{
                 
                 print(name)
             }
@@ -115,7 +118,7 @@ extension NearestTableViewController: LocationDetectorDelegate {
         
         DispatchQueue.main.async {
                 //TODO: Show a AlertController with error
-        
+    //    stationNames.removeAll()
             self.fetchxxxx()
         
         }
