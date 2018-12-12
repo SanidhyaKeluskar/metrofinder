@@ -141,12 +141,12 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="ndj-fR-M9a" kind="show" identifier="Seguethree" id="iE0-pi-ooI"/>
+                        <segue destination="rma-sw-zh1" kind="show" identifier="segueeleven" id="Y9p-G3-reg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wy7-f7-8hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="-121"/>
+            <point key="canvasLocation" x="1549" y="170"/>
         </scene>
         <!--Yelp List View Controller-->
         <scene sceneID="Dd2-8w-McB">
@@ -565,6 +565,7 @@
         <image name="Batman" width="640" height="372"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L7h-UX-Wek"/>
+        <segue reference="RqV-6W-TwC"/>
+        <segue reference="Y9p-G3-reg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,7 +17,7 @@ var userlongitude : Double = 0.0
 var  coordinatetwo = CLLocation(latitude: 0.0, longitude: 0.0)
 
 class NearestTableViewController: UITableViewController {
-    
+    var bcbdcbdbchbdch = ""
     let wmata=WmataAPI()
     let locationDetector = LocationDetector()
     
@@ -51,6 +51,18 @@ class NearestTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+      //  workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+        super.viewWillAppear(animated)
+         stationNames.removeAll()
+        
+        stationNames.append(bcbdcbdbchbdch)
+        
+        tableView.reloadData()
+        
+        
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stationNames.count
     }
@@ -63,7 +75,7 @@ class NearestTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex=indexPath.row
-        performSegue(withIdentifier: "Seguethree", sender: self)
+        performSegue(withIdentifier: "segueeleven", sender: self)
     }
     
     func fetchxxxx( )
@@ -79,6 +91,8 @@ class NearestTableViewController: UITableViewController {
             var mindist = 2000.000
             var mindiststationname = ""
              stationNames.removeAll()
+            
+        
             for value in results.Stations{
                 var stationlat=value.Lat
                 var stationlon=value.Lon
@@ -98,6 +112,9 @@ class NearestTableViewController: UITableViewController {
                 }
                 
             }
+            
+            self.bcbdcbdbchbdch = mindiststationname
+            
             stationNames.append(mindiststationname)
             
             DispatchQueue.main.async{

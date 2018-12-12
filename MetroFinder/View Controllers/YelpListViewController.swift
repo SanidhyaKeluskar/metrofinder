@@ -35,10 +35,10 @@ class YelpListViewController: UIViewController {
         landmarkImages.removeAll()
         
         SVProgressHUD.show(withStatus: "Loading")
-        if check != stationNames[myindex] {
-            check = stationNames[myindex]
+   //     if check != stationNames[myindex] {
+     //       check = stationNames[myindex]
             callyelp()
-        }
+   //     }
 
       
     }
