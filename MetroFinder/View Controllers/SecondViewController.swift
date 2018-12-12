@@ -54,7 +54,7 @@ class SecondViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex=indexPath.row
-        performSegue(withIdentifier: "seguetwo", sender: self)
+        performSegue(withIdentifier: "segueseven", sender: self)
     }
 
 

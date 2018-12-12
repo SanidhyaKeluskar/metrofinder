@@ -8,23 +8,31 @@
 
 import UIKit
 import SVProgressHUD
+import Alamofire
+import AlamofireImage
 
 var landmarkNames = [String]()
 var landmarkImages = [String]()
 var check = ""
+var landmarkDetails : [LandmarkDetails] = []
 
-class YelpTableViewController: UITableViewController {
+class YelpTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet var tableView: UITableView!
     
-    let cellID="CellID"
+   // let cellFourID="CellIDxxxxxx"
     let yelapi=YelpAPI()
     
     override func viewDidLoad() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         super.viewDidLoad()
         navigationItem.title="Landmarks Nearby"
         navigationController?.navigationBar.prefersLargeTitles=true
         landmarkNames.removeAll()
         landmarkImages.removeAll()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+   //    tableView.register(YelpTableViewCell.self, forCellReuseIdentifier: "cellFourID")
         
         SVProgressHUD.show(withStatus: "Loading")
         if check != stationNames[myindex] {
@@ -39,18 +47,19 @@ class YelpTableViewController: UITableViewController {
             
             for value in results.businesses{
                 landmarkNames.append(value.name!)
+                landmarkDetails.append(LandmarkDetails(landmarkname: value.name!, landmarkurl: value.image_url!))
                 landmarkImages.append(value.image_url!)
             }
             for name in landmarkNames{
                 
-                print(name)
+             //   print(name)
             }
 
             
             
             SVProgressHUD.dismiss()
             DispatchQueue.main.async{
-                self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
+                self.tableView.register(YelpTableViewCell.self, forCellReuseIdentifier: "cellFourID")
                 self.tableView.reloadData()
             }
         }
@@ -58,21 +67,49 @@ class YelpTableViewController: UITableViewController {
 
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        let name=landmarkNames[indexPath.row]
-        cell.textLabel?.text = name
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      //  let cell=tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! YelpTableViewController
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellFourID") as! YelpTableViewCell
+       let name=landmarkNames[indexPath.row]
+        
+        let fff=landmarkDetails[indexPath.row]
+    //   cell.textLabel?.text = name
+      //  print(cell.textofindividualcell.text  as Any)
+        cell.setlandmarks(xxxx: fff)
+            cell.textofindividualcell?.text = fff.landmarkname
+               // print("hi here " + cell.textOfLandmark.text!)
+        
+       //cell.textOfLandmark.text = name
+        print(cell.textofindividualcell?.text as Any)
+        
+        
+    Alamofire.request(landmarkImages[indexPath.row]).responseImage(completionHandler: { response in
+        
+        if var image = response.result.value{
+            DispatchQueue.main.async {
+                cell.imageofindividualcell?.image = image
+                print(image)
+            }
+            
+        }
+        
+            }
+            )
+        
+        
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
         return landmarkNames.count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex=indexPath.row
         performSegue(withIdentifier: "seguetolast", sender: self)
     }
+    
 
 }
