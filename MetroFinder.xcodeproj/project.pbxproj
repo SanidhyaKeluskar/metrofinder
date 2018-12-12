@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1A05184721C0969600839AA2 /* YelpListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05184621C0969600839AA2 /* YelpListViewController.swift */; };
 		1A05184921C098E400839AA2 /* YelpListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05184821C098E400839AA2 /* YelpListTableViewCell.swift */; };
+		1A1C1FD121C0BF21007594A9 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C1FD021C0BF21007594A9 /* MyFavouriteViewController.swift */; };
+		1A1C1FD321C0BF38007594A9 /* MyFavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C1FD221C0BF38007594A9 /* MyFavouriteTableViewCell.swift */; };
 		1A1C4D4B21C07E6700EE50BC /* FavouriteLandmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C4D4A21C07E6700EE50BC /* FavouriteLandmarksViewController.swift */; };
 		1A1C4D4D21C0870C00EE50BC /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C4D4C21C0870C00EE50BC /* FavouriteTableViewCell.swift */; };
 		1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */; };
@@ -38,6 +40,8 @@
 		0BD9A549DBD509240C8F7742 /* Pods-MetroFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetroFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetroFinder/Pods-MetroFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		1A05184621C0969600839AA2 /* YelpListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpListViewController.swift; sourceTree = "<group>"; };
 		1A05184821C098E400839AA2 /* YelpListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpListTableViewCell.swift; sourceTree = "<group>"; };
+		1A1C1FD021C0BF21007594A9 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
+		1A1C1FD221C0BF38007594A9 /* MyFavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		1A1C4D4A21C07E6700EE50BC /* FavouriteLandmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteLandmarksViewController.swift; sourceTree = "<group>"; };
 		1A1C4D4C21C0870C00EE50BC /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestTableViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				1A5BC6F821ACF7E8001F39FF /* Info.plist */,
 				1A1C4D4C21C0870C00EE50BC /* FavouriteTableViewCell.swift */,
 				1A05184821C098E400839AA2 /* YelpListTableViewCell.swift */,
+				1A1C1FD221C0BF38007594A9 /* MyFavouriteTableViewCell.swift */,
 			);
 			path = MetroFinder;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				1ADE64D021B9F710003F5FEB /* SecondViewController.swift */,
 				1A1C4D4A21C07E6700EE50BC /* FavouriteLandmarksViewController.swift */,
 				1A05184621C0969600839AA2 /* YelpListViewController.swift */,
+				1A1C1FD021C0BF21007594A9 /* MyFavouriteViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				1A1C4D4D21C0870C00EE50BC /* FavouriteTableViewCell.swift in Sources */,
 				1A05184721C0969600839AA2 /* YelpListViewController.swift in Sources */,
 				1A05184921C098E400839AA2 /* YelpListTableViewCell.swift in Sources */,
+				1A1C1FD321C0BF38007594A9 /* MyFavouriteTableViewCell.swift in Sources */,
 				1AC9280B21BF373600DA24E3 /* FavouriteLandMarkModel.swift in Sources */,
 				1A5BC6ED21ACF7E6001F39FF /* DataViewController.swift in Sources */,
 				1ADE64D121B9F710003F5FEB /* SecondViewController.swift in Sources */,
@@ -308,6 +315,7 @@
 				1A59EE6121BDD14C005FFA89 /* LandmarkViewController.swift in Sources */,
 				1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */,
 				1A5BC6E921ACF7E6001F39FF /* AppDelegate.swift in Sources */,
+				1A1C1FD121C0BF21007594A9 /* MyFavouriteViewController.swift in Sources */,
 				1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */,
 				1ADE64D521BA18EC003F5FEB /* WmataAPI.swift in Sources */,
 				1A1C4D4B21C07E6700EE50BC /* FavouriteLandmarksViewController.swift in Sources */,
