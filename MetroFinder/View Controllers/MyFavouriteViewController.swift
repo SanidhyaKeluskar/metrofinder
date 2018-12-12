@@ -27,9 +27,16 @@ class MyFavouriteViewController: UIViewController {
 
         landmarkNames.removeAll()
         landmarkImages.removeAll()
+        landmarkLongititude.removeAll()
+        landmarkLongititude.removeAll()
+        landmarkRating.removeAll()
+        
         for value in workoutstwo{
             landmarkNames.append(value.name)
             landmarkImages.append(value.url)
+            landmarkRating.append(value.landmarkRating)
+            landmarkLatitude.append(value.landmarkLat)
+            landmarkLongititude.append(value.landmarkLong)
         }
         
         for value in landmarkNames {
@@ -45,8 +52,20 @@ class MyFavouriteViewController: UIViewController {
         workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
         super.viewWillAppear(animated)
         print("hiiiii")
-        
         tableView.reloadData()
+        landmarkNames.removeAll()
+        landmarkImages.removeAll()
+        landmarkLongititude.removeAll()
+        landmarkLongititude.removeAll()
+        landmarkRating.removeAll()
+        
+        for value in workoutstwo{
+            landmarkNames.append(value.name)
+            landmarkImages.append(value.url)
+            landmarkRating.append(value.landmarkRating)
+            landmarkLatitude.append(value.landmarkLat)
+            landmarkLongititude.append(value.landmarkLong)
+        }
         
     }
     

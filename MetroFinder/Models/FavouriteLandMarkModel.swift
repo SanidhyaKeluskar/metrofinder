@@ -11,4 +11,8 @@ import Foundation
 struct FavouriteLandMarkModel: Codable {
     let name: String
     let url: String
+    let landmarkLat : Double
+    let landmarkLong : Double
+    let landmarkRating : float_t
 }
+

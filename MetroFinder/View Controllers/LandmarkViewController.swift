@@ -48,7 +48,7 @@ class LandmarkViewController: UIViewController{
     
     
     @IBAction func favourites(_ sender: Any) {
-        let workout = FavouriteLandMarkModel(name: landmarkNames[myindex], url: landmarkImages[myindex])
+        let workout = FavouriteLandMarkModel(name: landmarkNames[myindex], url: landmarkImages[myindex], landmarkLat : landmarkLatitude[myindex], landmarkLong : landmarkLongititude[myindex], landmarkRating : landmarkRating[myindex])
         PersistenceManager.sharedInstance.saveWorkout(workout: workout)
 
     }
