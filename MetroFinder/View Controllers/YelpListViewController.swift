@@ -13,6 +13,10 @@ import AlamofireImage
 
 var landmarkNames = [String]()
 var landmarkImages = [String]()
+var landmarkLatitude = [Double]()
+var landmarkLongititude = [Double]()
+var landmarkRating = [float_t]()
+
 var check = ""
 var landmarkDetails : [LandmarkDetails] = []
 
@@ -33,6 +37,9 @@ class YelpListViewController: UIViewController {
         
         landmarkNames.removeAll()
         landmarkImages.removeAll()
+        landmarkLongititude.removeAll()
+        landmarkLongititude.removeAll()
+        landmarkRating.removeAll()
         
         SVProgressHUD.show(withStatus: "Loading")
    //     if check != stationNames[myindex] {
@@ -50,6 +57,12 @@ class YelpListViewController: UIViewController {
                 landmarkNames.append(value.name!)
                 landmarkDetails.append(LandmarkDetails(landmarkname: value.name!, landmarkurl: value.image_url!))
                 landmarkImages.append(value.image_url!)
+                
+                landmarkRating.append(value.rating!)
+                landmarkLatitude.append(value.coordinates.latitude!)
+                landmarkLongititude.append(value.coordinates.longitude!)
+                
+                
             }
             for name in landmarkNames{
                 
