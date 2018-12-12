@@ -384,6 +384,10 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAC-xx-YCx">
                                                     <rect key="frame" x="32" y="11" width="233" height="78"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="8sg-r1-txn"/>
+                                                        <constraint firstAttribute="height" constant="78" id="BlT-MC-hac"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -419,6 +423,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="5gm-Vf-oye" id="3AJ-kz-Dht"/>
+                        <segue destination="aXv-91-Jzu" kind="show" identifier="segueten" id="L7h-UX-Wek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3i-zq-jAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -560,6 +565,6 @@
         <image name="Batman" width="640" height="372"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="26n-Un-fs8"/>
+        <segue reference="L7h-UX-Wek"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -39,6 +39,15 @@ class MyFavouriteViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+        super.viewWillAppear(animated)
+        print("hiiiii")
+        
+        tableView.reloadData()
+        
+    }
+    
 
 
 }
@@ -66,5 +75,10 @@ extension MyFavouriteViewController : UITableViewDataSource, UITableViewDelegate
         } )
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myindex=indexPath.row
+        performSegue(withIdentifier: "segueten", sender: self)
     }
 }

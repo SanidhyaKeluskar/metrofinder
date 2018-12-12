@@ -11,8 +11,6 @@
 		1A05184921C098E400839AA2 /* YelpListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05184821C098E400839AA2 /* YelpListTableViewCell.swift */; };
 		1A1C1FD121C0BF21007594A9 /* MyFavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C1FD021C0BF21007594A9 /* MyFavouriteViewController.swift */; };
 		1A1C1FD321C0BF38007594A9 /* MyFavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C1FD221C0BF38007594A9 /* MyFavouriteTableViewCell.swift */; };
-		1A1C4D4B21C07E6700EE50BC /* FavouriteLandmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C4D4A21C07E6700EE50BC /* FavouriteLandmarksViewController.swift */; };
-		1A1C4D4D21C0870C00EE50BC /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C4D4C21C0870C00EE50BC /* FavouriteTableViewCell.swift */; };
 		1A59EE5721BC97C1005FFA89 /* NearestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */; };
 		1A59EE5D21BCCC9A005FFA89 /* YelpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */; };
 		1A59EE5F21BCD06D005FFA89 /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */; };
@@ -42,8 +40,6 @@
 		1A05184821C098E400839AA2 /* YelpListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpListTableViewCell.swift; sourceTree = "<group>"; };
 		1A1C1FD021C0BF21007594A9 /* MyFavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteViewController.swift; sourceTree = "<group>"; };
 		1A1C1FD221C0BF38007594A9 /* MyFavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavouriteTableViewCell.swift; sourceTree = "<group>"; };
-		1A1C4D4A21C07E6700EE50BC /* FavouriteLandmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteLandmarksViewController.swift; sourceTree = "<group>"; };
-		1A1C4D4C21C0870C00EE50BC /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearestTableViewController.swift; sourceTree = "<group>"; };
 		1A59EE5C21BCCC9A005FFA89 /* YelpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpResponse.swift; sourceTree = "<group>"; };
 		1A59EE5E21BCD06D005FFA89 /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
@@ -112,7 +108,6 @@
 				1A5BC6F321ACF7E8001F39FF /* Assets.xcassets */,
 				1A5BC6F521ACF7E8001F39FF /* LaunchScreen.storyboard */,
 				1A5BC6F821ACF7E8001F39FF /* Info.plist */,
-				1A1C4D4C21C0870C00EE50BC /* FavouriteTableViewCell.swift */,
 				1A05184821C098E400839AA2 /* YelpListTableViewCell.swift */,
 				1A1C1FD221C0BF38007594A9 /* MyFavouriteTableViewCell.swift */,
 			);
@@ -126,7 +121,6 @@
 				1A59EE5621BC97C1005FFA89 /* NearestTableViewController.swift */,
 				1A59EE6021BDD14C005FFA89 /* LandmarkViewController.swift */,
 				1ADE64D021B9F710003F5FEB /* SecondViewController.swift */,
-				1A1C4D4A21C07E6700EE50BC /* FavouriteLandmarksViewController.swift */,
 				1A05184621C0969600839AA2 /* YelpListViewController.swift */,
 				1A1C1FD021C0BF21007594A9 /* MyFavouriteViewController.swift */,
 			);
@@ -302,7 +296,6 @@
 				1A5BC6EB21ACF7E6001F39FF /* RootViewController.swift in Sources */,
 				1A59EE5F21BCD06D005FFA89 /* YelpAPI.swift in Sources */,
 				1A5BC6EF21ACF7E6001F39FF /* ModelController.swift in Sources */,
-				1A1C4D4D21C0870C00EE50BC /* FavouriteTableViewCell.swift in Sources */,
 				1A05184721C0969600839AA2 /* YelpListViewController.swift in Sources */,
 				1A05184921C098E400839AA2 /* YelpListTableViewCell.swift in Sources */,
 				1A1C1FD321C0BF38007594A9 /* MyFavouriteTableViewCell.swift in Sources */,
@@ -318,7 +311,6 @@
 				1A1C1FD121C0BF21007594A9 /* MyFavouriteViewController.swift in Sources */,
 				1ADE64D821BA5DA3003F5FEB /* WmataResponse.swift in Sources */,
 				1ADE64D521BA18EC003F5FEB /* WmataAPI.swift in Sources */,
-				1A1C4D4B21C07E6700EE50BC /* FavouriteLandmarksViewController.swift in Sources */,
 				1AC9280D21BF380A00DA24E3 /* PeristenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
