@@ -510,7 +510,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kc4-TM-tOb">
-                                                    <rect key="frame" x="280" y="11.5" width="122" height="66.5"/>
+                                                    <rect key="frame" x="280" y="9" width="122" height="71.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="122" id="2Zu-eS-Vgl"/>
                                                     </constraints>
@@ -565,6 +565,6 @@
         <image name="Batman" width="640" height="372"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="26n-Un-fs8"/>
+        <segue reference="L7h-UX-Wek"/>
     </inferredMetricsTieBreakers>
 </document>

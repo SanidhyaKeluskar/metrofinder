@@ -75,6 +75,9 @@ class NearestTableViewController: UITableViewController {
         
         
         wmata.fetchMetroStations(){(results:SomeThing) in
+            
+            var mindist = 2000.000
+            var mindiststationname = ""
              stationNames.removeAll()
             for value in results.Stations{
                 var stationlat=value.Lat
@@ -86,11 +89,17 @@ class NearestTableViewController: UITableViewController {
                 var distanceInMeters = coordinateone.distance(from: coordinatetwo)
                 
                 
-                if (distanceInMeters <= 1402.336){
-                    stationNames.append(value.Name!)
+                
+                if (distanceInMeters < mindist){
+                    
+                    mindist = distanceInMeters
+                    mindiststationname = value.Name!
+                  //  stationNames.append(value.Name!)
                 }
                 
             }
+            stationNames.append(mindiststationname)
+            
             DispatchQueue.main.async{
                 self.tableView.reloadData()
             }
