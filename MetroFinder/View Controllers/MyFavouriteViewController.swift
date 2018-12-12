@@ -19,6 +19,8 @@ class MyFavouriteViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        navigationItem.title="Favourites"
+        navigationController?.navigationBar.prefersLargeTitles=false
         
         tableView.delegate = self
         tableView.dataSource = self

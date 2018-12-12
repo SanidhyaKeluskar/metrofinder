@@ -27,7 +27,13 @@ class LandmarkViewController: UIViewController{
     
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
+        
+        navigationItem.title="Landmark Details"
+        navigationController?.navigationBar.prefersLargeTitles=false
+        
           nameofLandmark.text=landmarkNames[myindex]
         
         Alamofire.request(landmarkImages[myindex]).responseImage(completionHandler: {response in

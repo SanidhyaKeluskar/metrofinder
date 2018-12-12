@@ -10,6 +10,8 @@ import Foundation
 
 
 var  xxxx = [String]()
+
+
 class WmataAPI {
 
     func fetchMetroStations(completion:@escaping(SomeThing)->()) {

@@ -25,6 +25,9 @@ class YelpListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title="Landmarks"
+        navigationController?.navigationBar.prefersLargeTitles=true
+        
         tableView.delegate = self as! UITableViewDelegate
         tableView.dataSource = self as! UITableViewDataSource
         

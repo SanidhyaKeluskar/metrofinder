@@ -298,7 +298,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWO-Nh-Ukj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2520.289855072464" y="-778.125"/>
+            <point key="canvasLocation" x="2733" y="-1509"/>
         </scene>
         <!--Landmark View Controller-->
         <scene sceneID="2gM-Rn-4TI">
@@ -565,6 +565,6 @@
         <image name="Batman" width="640" height="372"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L7h-UX-Wek"/>
+        <segue reference="26n-Un-fs8"/>
     </inferredMetricsTieBreakers>
 </document>

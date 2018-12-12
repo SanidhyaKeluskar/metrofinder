@@ -55,7 +55,7 @@ class NearestTableViewController: UITableViewController {
         return stationNames.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: cellTwoID, for: indexPath)
+        let cell=tableView.dequeueReusableCell(withIdentifier: "CellTwoID", for: indexPath)
         let name=stationNames[indexPath.row]
         cell.textLabel?.text = name
         return cell
@@ -71,7 +71,7 @@ class NearestTableViewController: UITableViewController {
         
    
         SVProgressHUD.dismiss()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellTwoID)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellTwoID")
         
         
         wmata.fetchMetroStations(){(results:SomeThing) in
