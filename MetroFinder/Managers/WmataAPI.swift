@@ -13,16 +13,21 @@ var  xxxx = [String]()
 
 
 class WmataAPI {
+    
+    let myUrl = "https://api.wmata.com/Rail.svc/json/jStations"
+    let method = "GET"
+    let key = "cf7675512b6b450395270a38112a4042"
+    let headerField = "api_key"
 
     func fetchMetroStations(completion:@escaping(SomeThing)->()) {
      
         var somethingxx:SomeThing!
      
-        let urlObj=URLComponents(string: "https://api.wmata.com/Rail.svc/json/jStations")!
+        let urlObj=URLComponents(string: myUrl)!
         let url = urlObj.url!
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("cf7675512b6b450395270a38112a4042", forHTTPHeaderField: "api_key")
+        request.httpMethod = method
+        request.setValue(key, forHTTPHeaderField: headerField)
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
            

@@ -26,12 +26,17 @@ class YelpListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let cellID="FifthCell"
+    let tittle = "Landmarks"
+    let sequeIdentifier = "segueeight"
+    let loading="Loading"
+    
     let yelapi=YelpAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title="Landmarks"
+        navigationItem.title =  tittle
         navigationController?.navigationBar.prefersLargeTitles=true
         
         tableView.delegate = self as! UITableViewDelegate
@@ -44,7 +49,7 @@ class YelpListViewController: UIViewController {
         landmarkRating.removeAll()
         landmarkAddress.removeAll()
         
-        SVProgressHUD.show(withStatus: "Loading")
+        SVProgressHUD.show(withStatus: loading)
    
             callyelp()
  
@@ -89,12 +94,12 @@ class YelpListViewController: UIViewController {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             myindex=indexPath.row
-            performSegue(withIdentifier: "segueeight", sender: self)
+            performSegue(withIdentifier: sequeIdentifier, sender: self)
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FifthCell") as! YelpListTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! YelpListTableViewCell
          
             cell.nameOfYelpLandmark.text=landmarkNames[indexPath.row]
         

@@ -22,8 +22,14 @@ class NearestTableViewController: UITableViewController {
     var nearestLong : Double = 0.0
     let wmata=WmataAPI()
     let locationDetector = LocationDetector()
+    let loading="Loading"
+    let tittle = "Nearest Station"
     
     let cellTwoID="CellIDTWOThreee"
+    
+    let cellID = "CellTwoID"
+    let sequeIdentifier = "segueeleven"
+    let sorrymessage = "no location found :("
     
     override func viewDidLoad() {
   
@@ -38,11 +44,11 @@ class NearestTableViewController: UITableViewController {
         
         
      
-        navigationItem.title="Nearest Station"
+        navigationItem.title = tittle
         navigationController?.navigationBar.prefersLargeTitles=true
         
         
-        SVProgressHUD.show(withStatus: "Loading")
+        SVProgressHUD.show(withStatus: loading)
         
                if(userlatitude>0.0){
             
@@ -72,7 +78,7 @@ class NearestTableViewController: UITableViewController {
         return stationNames.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: "CellTwoID", for: indexPath)
+        let cell=tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         let name=stationNames[indexPath.row]
         cell.textLabel?.text = name
         return cell
@@ -80,7 +86,7 @@ class NearestTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex=indexPath.row
-        performSegue(withIdentifier: "segueeleven", sender: self)
+        performSegue(withIdentifier: sequeIdentifier, sender: self)
     }
     
     func fetch( )
@@ -88,7 +94,7 @@ class NearestTableViewController: UITableViewController {
         
    
         SVProgressHUD.dismiss()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellTwoID")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         
         // fetches station information from WMATA ApI
         wmata.fetchMetroStations(){(results:SomeThing) in
@@ -167,7 +173,7 @@ extension NearestTableViewController: LocationDetectorDelegate {
     }
     
     func locationNotDetected() {
-        print("no location found :(")
+        print(sorrymessage)
         
     
     }

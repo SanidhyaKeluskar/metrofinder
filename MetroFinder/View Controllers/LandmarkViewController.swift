@@ -12,15 +12,19 @@ import AlamofireImage
 import MapKit
 
 class LandmarkViewController: UIViewController{
+    
+    let sharingText = "Hi check out "
+    let sharingTextTwo = " with Yelp rating: "
+    let tittle = "Landmark Details"
+    let ratings = "Ratings : "
 
     @IBOutlet weak var imageOflandmark: UIImageView!
     @IBOutlet weak var nameofLandmark: UILabel!
     @IBOutlet weak var phoneNumberofLandmark: UILabel!
-    
     @IBOutlet weak var addressOfLandmark: UILabel!
     @IBAction func shareButton(_ sender: Any) {
         
-        let shareText = "Hi check out " + landmarkNames[myindex] + " with Yelp rating: " + landmarkRating[myindex].description
+        let shareText = sharingText + landmarkNames[myindex] + sharingTextTwo + landmarkRating[myindex].description
         
         let activityViewController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
         
@@ -64,7 +68,7 @@ class LandmarkViewController: UIViewController{
         
         super.viewDidLoad()
         
-        navigationItem.title="Landmark Details"
+        navigationItem.title = tittle
         navigationController?.navigationBar.prefersLargeTitles=false
         
           nameofLandmark.text=landmarkNames[myindex]
@@ -76,7 +80,7 @@ class LandmarkViewController: UIViewController{
         }
         )
         
-        phoneNumberofLandmark.text = "Ratings : " + landmarkRating[myindex].description
+        phoneNumberofLandmark.text = ratings + landmarkRating[myindex].description
         
         addressOfLandmark.text = landmarkAddress[myindex]
         

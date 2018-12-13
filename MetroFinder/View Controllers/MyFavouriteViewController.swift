@@ -14,12 +14,16 @@ class MyFavouriteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let cellID="MyFavouriteLandmark"
+    let tittle = "Favourites"
+    let sequeIdentifier = "segueten"
+    
   var fetchedFavouriteLandmarks = PersistenceManager.sharedInstance.fetchFavouriteLandmarks()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        navigationItem.title="Favourites"
+        navigationItem.title = tittle
         navigationController?.navigationBar.prefersLargeTitles=false
         
         tableView.delegate = self
@@ -84,7 +88,7 @@ extension MyFavouriteViewController : UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyFavouriteLandmark") as! MyFavouriteTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! MyFavouriteTableViewCell
         
         cell.myFavouriteLandmarkname.text = fetchedFavouriteLandmarks[indexPath.row].name
         
@@ -104,6 +108,6 @@ extension MyFavouriteViewController : UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex=indexPath.row
-        performSegue(withIdentifier: "segueten", sender: self)
+        performSegue(withIdentifier: sequeIdentifier, sender: self)
     }
 }

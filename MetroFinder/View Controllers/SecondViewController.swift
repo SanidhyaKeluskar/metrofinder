@@ -17,10 +17,13 @@ class SecondViewController: UITableViewController {
     let wmata=WmataAPI()
     
     let cellID="CellID"
+    let tittle = "Metro Stations"
+    let sequeIdentifier = "segueseven"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title="Metro Stations"
+        navigationItem.title = tittle
         navigationController?.navigationBar.prefersLargeTitles=true
  
        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
@@ -63,7 +66,7 @@ class SecondViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myindex=indexPath.row
-        performSegue(withIdentifier: "segueseven", sender: self)
+        performSegue(withIdentifier: sequeIdentifier, sender: self)
     }
 
 

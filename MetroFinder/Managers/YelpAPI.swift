@@ -10,25 +10,37 @@ import Foundation
 import UIKit
 
 class YelpAPI {
+    
+    let myUrl = "https://api.yelp.com/v3/businesses/search"
+    let method = "GET"
+    let key = "Bearer Y7IIfy2RXcCawmIsrc-ENW4iP3Mp2esOTJxk468MNjuyUOR1FxwzAcEyxIdhHbLiEpF-dvIdOljhUPtmM2ALLSqdB9QzDxttn55G79GN65o1gS7yRqGPsvE1hoAMXHYx"
+    let headerField = "Authorization"
+    
+    let term = "term"
+    let location = "location"
+    let latitude = "latitude"
+    let longitude = "longitude"
+    let typeOfsearch = "food"
+    
     func fetchlandmarks(selectedStationName : String, selectedLat : Double, selectedLong : Double , completion:@escaping(yelpres)->()) {
         
         var xxttt:yelpres!
         
         
-        var urlObj=URLComponents(string: "https://api.yelp.com/v3/businesses/search")
+        var urlObj=URLComponents(string: myUrl)
         
-        let queryItemToken = URLQueryItem(name: "term", value: "food")
-        let queryItemQuery = URLQueryItem(name: "location", value: selectedStationName)
-        let queryItemLat = URLQueryItem(name: "latitude", value: selectedLat.description)
-        let queryItemLong = URLQueryItem(name: "longitude", value: selectedLong.description)
+        let queryItemToken = URLQueryItem(name: term, value: typeOfsearch)
+        let queryItemQuery = URLQueryItem(name: location, value: selectedStationName)
+        let queryItemLat = URLQueryItem(name: latitude, value: selectedLat.description)
+        let queryItemLong = URLQueryItem(name: longitude, value: selectedLong.description)
         
         urlObj!.queryItems = [queryItemToken, queryItemLat, queryItemLong]
         
         let url = urlObj?.url!
         
         var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        request.setValue("Bearer Y7IIfy2RXcCawmIsrc-ENW4iP3Mp2esOTJxk468MNjuyUOR1FxwzAcEyxIdhHbLiEpF-dvIdOljhUPtmM2ALLSqdB9QzDxttn55G79GN65o1gS7yRqGPsvE1hoAMXHYx", forHTTPHeaderField: "Authorization")
+        request.httpMethod = method
+        request.setValue(key, forHTTPHeaderField: headerField)
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
