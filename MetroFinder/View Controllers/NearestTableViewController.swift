@@ -17,7 +17,9 @@ var userlongitude : Double = 0.0
 var  coordinatetwo = CLLocation(latitude: 0.0, longitude: 0.0)
 
 class NearestTableViewController: UITableViewController {
-    var bcbdcbdbchbdch = ""
+    var nearstationname = ""
+    var nearestLat : Double = 0.0
+    var nearestLong : Double = 0.0
     let wmata=WmataAPI()
     let locationDetector = LocationDetector()
     
@@ -55,8 +57,12 @@ class NearestTableViewController: UITableViewController {
       //  workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
         super.viewWillAppear(animated)
          stationNames.removeAll()
+        stationLat.removeAll()
+        stationLong.removeAll()
         
-        stationNames.append(bcbdcbdbchbdch)
+        stationNames.append(nearstationname)
+        stationLat.append(nearestLat)
+        stationLong.append(nearestLong)
         
         tableView.reloadData()
         
@@ -90,7 +96,12 @@ class NearestTableViewController: UITableViewController {
             
             var mindist = 2000.000
             var mindiststationname = ""
+            var mynearestStationlat : Double = 0.0
+            var mynearestStationlong : Double = 0.0
+            
              stationNames.removeAll()
+            stationLat.removeAll()
+            stationLong.removeAll()
             
         
             for value in results.Stations{
@@ -108,14 +119,20 @@ class NearestTableViewController: UITableViewController {
                     
                     mindist = distanceInMeters
                     mindiststationname = value.Name!
+                    mynearestStationlat = value.Lat!
+                    mynearestStationlong = value.Lon!
                   //  stationNames.append(value.Name!)
                 }
                 
             }
             
-            self.bcbdcbdbchbdch = mindiststationname
+            self.nearstationname = mindiststationname
+            self.nearestLat = mynearestStationlat
+            self.nearestLong = mynearestStationlong
             
             stationNames.append(mindiststationname)
+            stationLat.append(mynearestStationlat)
+            stationLong.append(mynearestStationlong)
             
             DispatchQueue.main.async{
                 self.tableView.reloadData()

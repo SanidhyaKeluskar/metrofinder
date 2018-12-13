@@ -54,7 +54,7 @@ class YelpListViewController: UIViewController {
     }
     
     func callyelp(){
-        yelapi.fetchlandmarks(selectedStationName: stationNames[myindex]){(results:yelpres) in
+        yelapi.fetchlandmarks(selectedStationName: stationNames[myindex], selectedLat : stationLat[myindex], selectedLong : stationLong[myindex] ){(results:yelpres) in
             
             for value in results.businesses{
                 landmarkNames.append(value.name!)
