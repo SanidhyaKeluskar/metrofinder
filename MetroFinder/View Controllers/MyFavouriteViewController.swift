@@ -58,6 +58,7 @@ class MyFavouriteViewController: UIViewController {
         landmarkLongititude.removeAll()
         landmarkLongititude.removeAll()
         landmarkRating.removeAll()
+        landmarkAddress.removeAll()
         
         for value in workoutstwo{
             landmarkNames.append(value.name)
@@ -65,6 +66,7 @@ class MyFavouriteViewController: UIViewController {
             landmarkRating.append(value.landmarkRating)
             landmarkLatitude.append(value.landmarkLat)
             landmarkLongititude.append(value.landmarkLong)
+            landmarkAddress.append( value.landmarkAddress )
         }
         
     }

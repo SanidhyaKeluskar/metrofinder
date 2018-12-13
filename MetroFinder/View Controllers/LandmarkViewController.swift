@@ -17,6 +17,7 @@ class LandmarkViewController: UIViewController{
     @IBOutlet weak var nameofLandmark: UILabel!
     @IBOutlet weak var phoneNumberofLandmark: UILabel!
     
+    @IBOutlet weak var addressOfLandmark: UILabel!
     @IBAction func shareButton(_ sender: Any) {
         
         let shareText = "Hi check out " + landmarkNames[myindex] + " with Yelp rating: " + landmarkRating[myindex].description
@@ -48,7 +49,7 @@ class LandmarkViewController: UIViewController{
     
     
     @IBAction func favourites(_ sender: Any) {
-        let workout = FavouriteLandMarkModel(name: landmarkNames[myindex], url: landmarkImages[myindex], landmarkLat : landmarkLatitude[myindex], landmarkLong : landmarkLongititude[myindex], landmarkRating : landmarkRating[myindex])
+        let workout = FavouriteLandMarkModel(name: landmarkNames[myindex], url: landmarkImages[myindex], landmarkLat : landmarkLatitude[myindex], landmarkLong : landmarkLongititude[myindex], landmarkRating : landmarkRating[myindex] , landmarkAddress : landmarkAddress[myindex] )
         PersistenceManager.sharedInstance.saveWorkout(workout: workout)
 
     }
@@ -76,6 +77,9 @@ class LandmarkViewController: UIViewController{
         )
         
         phoneNumberofLandmark.text = "Ratings : " + landmarkRating[myindex].description
+        
+        addressOfLandmark.text = landmarkAddress[myindex]
+        
         
        
         

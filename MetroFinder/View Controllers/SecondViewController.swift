@@ -10,6 +10,8 @@ import UIKit
 
 var myindex=0
 var stationNames = [String]()
+
+
 class SecondViewController: UITableViewController {
     let wmata=WmataAPI()
     
@@ -27,6 +29,7 @@ class SecondViewController: UITableViewController {
         wmata.fetchMetroStations(){(results:SomeThing) in
             for value in results.Stations{
                 stationNames.append(value.Name!)
+                
             }
             DispatchQueue.main.async{
                 self.tableView.reloadData()

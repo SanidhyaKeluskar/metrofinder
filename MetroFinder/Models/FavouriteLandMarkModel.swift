@@ -14,5 +14,6 @@ struct FavouriteLandMarkModel: Codable {
     let landmarkLat : Double
     let landmarkLong : Double
     let landmarkRating : float_t
+    let landmarkAddress : String
 }
 

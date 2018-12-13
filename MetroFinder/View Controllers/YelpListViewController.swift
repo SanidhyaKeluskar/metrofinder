@@ -16,6 +16,8 @@ var landmarkImages = [String]()
 var landmarkLatitude = [Double]()
 var landmarkLongititude = [Double]()
 var landmarkRating = [float_t]()
+var landmarkAddress = [String]()
+
 
 var check = ""
 var landmarkDetails : [LandmarkDetails] = []
@@ -40,6 +42,7 @@ class YelpListViewController: UIViewController {
         landmarkLongititude.removeAll()
         landmarkLongititude.removeAll()
         landmarkRating.removeAll()
+        landmarkAddress.removeAll()
         
         SVProgressHUD.show(withStatus: "Loading")
    //     if check != stationNames[myindex] {
@@ -61,7 +64,7 @@ class YelpListViewController: UIViewController {
                 landmarkRating.append(value.rating!)
                 landmarkLatitude.append(value.coordinates.latitude!)
                 landmarkLongititude.append(value.coordinates.longitude!)
-                
+                landmarkAddress.append((value.location?.address1!)! + " " + (value.location?.city!)!)
                 
             }
             for name in landmarkNames{
