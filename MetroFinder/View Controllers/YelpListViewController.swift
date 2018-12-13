@@ -52,6 +52,7 @@ class YelpListViewController: UIViewController {
       
     }
     
+    //fetches information from yelp API
     func callyelp(){
         yelapi.fetchlandmarks(selectedStationName: stationNames[myindex], selectedLat : stationLat[myindex], selectedLong : stationLong[myindex] ){(results:yelpres) in
             
@@ -96,7 +97,7 @@ class YelpListViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FifthCell") as! YelpListTableViewCell
          
             cell.nameOfYelpLandmark.text=landmarkNames[indexPath.row]
-            
+        
             Alamofire.request(landmarkImages[indexPath.row]).responseImage(completionHandler: { response in
                 
                 if var image = response.result.value{

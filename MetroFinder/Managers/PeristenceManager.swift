@@ -11,34 +11,34 @@ import Foundation
 class PersistenceManager {
     static let sharedInstance = PersistenceManager()
     
-    let workoutsKey = "workouts"
+    let landmarkKeys = "myfavouriteLandmarks"
     
-    func saveWorkout(workout: FavouriteLandMarkModel)-> Bool {
+    func saveFavouriteLandmarks(favourites: FavouriteLandMarkModel)-> Bool {
         let userDefaults = UserDefaults.standard
         
-        var workouts = fetchWorkouts()
+        var myfavouriteLandmarks = fetchFavouriteLandmarks()
         
-        for value in workouts{
-            if(value.name==workout.name){
+        for value in myfavouriteLandmarks{
+            if(value.name==favourites.name){
                 return false
             }
             
         }
-        workouts.append(workout)
+        myfavouriteLandmarks.append(favourites)
         
         let encoder = JSONEncoder()
-        let encodedWorkouts = try? encoder.encode(workouts)
+        let encodedmyfavouriteLandmarks = try? encoder.encode(myfavouriteLandmarks)
         
-        userDefaults.set(encodedWorkouts, forKey: workoutsKey)
+        userDefaults.set(encodedmyfavouriteLandmarks, forKey: landmarkKeys)
         return true
     }
     
-    func fetchWorkouts() -> [FavouriteLandMarkModel] {
+    func fetchFavouriteLandmarks() -> [FavouriteLandMarkModel] {
         let userDefaults = UserDefaults.standard
         
-        if let workoutData = userDefaults.data(forKey: workoutsKey), let workouts = try? JSONDecoder().decode([FavouriteLandMarkModel].self, from: workoutData) {
-            //workoutData is non-nil and successfully decoded
-            return workouts
+        if let favouritesData = userDefaults.data(forKey: landmarkKeys), let myfavouriteLandmarks = try? JSONDecoder().decode([FavouriteLandMarkModel].self, from: favouritesData) {
+            //favouritesData is non-nil and successfully decoded
+            return myfavouriteLandmarks
         }
         else {
             return [FavouriteLandMarkModel]()
@@ -47,20 +47,20 @@ class PersistenceManager {
     
     func remove(name: String) {
         let userDefaults = UserDefaults.standard
-        var workouts = fetchWorkouts()
+        var myfavouriteLandmarks = fetchFavouriteLandmarks()
         var indexone : Int
         
-        for (index, element) in workouts.enumerated() {
+        for (index, element) in myfavouriteLandmarks.enumerated() {
             if element.name == name{
                 indexone = index
-                workouts.remove(at: indexone)
+                myfavouriteLandmarks.remove(at: indexone)
             }
         }
         
         let encoder = JSONEncoder()
-        let encodedWorkouts = try? encoder.encode(workouts)
+        let encodedmyfavouriteLandmarks = try? encoder.encode(myfavouriteLandmarks)
         
-        userDefaults.set(encodedWorkouts, forKey: workoutsKey)
+        userDefaults.set(encodedmyfavouriteLandmarks, forKey: landmarkKeys)
  
 
     }

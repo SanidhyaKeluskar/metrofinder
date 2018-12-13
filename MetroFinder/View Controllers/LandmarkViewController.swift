@@ -28,7 +28,7 @@ class LandmarkViewController: UIViewController{
     }
     
     @IBAction func mapsButton(_ sender: Any) {
-        //Defining destination
+        //Open apple maps with navigation to yelp Landmark
         let latitude:CLLocationDegrees = landmarkLatitude[myindex]
         let longitude:CLLocationDegrees = landmarkLongititude[myindex]
         
@@ -36,7 +36,7 @@ class LandmarkViewController: UIViewController{
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         
-        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span), MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeTransit] as [String : Any]
         
         let placemark = MKPlacemark(coordinate: coordinates)
         let mapItem = MKMapItem(placemark: placemark)
@@ -49,8 +49,8 @@ class LandmarkViewController: UIViewController{
     
     
     @IBAction func favourites(_ sender: Any) {
-        let workout = FavouriteLandMarkModel(name: landmarkNames[myindex], url: landmarkImages[myindex], landmarkLat : landmarkLatitude[myindex], landmarkLong : landmarkLongititude[myindex], landmarkRating : landmarkRating[myindex] , landmarkAddress : landmarkAddress[myindex] )
-        PersistenceManager.sharedInstance.saveWorkout(workout: workout)
+        let myfavourite = FavouriteLandMarkModel(name: landmarkNames[myindex], url: landmarkImages[myindex], landmarkLat : landmarkLatitude[myindex], landmarkLong : landmarkLongititude[myindex], landmarkRating : landmarkRating[myindex] , landmarkAddress : landmarkAddress[myindex] )
+        PersistenceManager.sharedInstance.saveFavouriteLandmarks(favourites: myfavourite)
 
     }
     

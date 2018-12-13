@@ -46,7 +46,7 @@ class NearestTableViewController: UITableViewController {
         
                if(userlatitude>0.0){
             
-            fetchxxxx( )
+            fetch( )
         }
         
         
@@ -83,14 +83,14 @@ class NearestTableViewController: UITableViewController {
         performSegue(withIdentifier: "segueeleven", sender: self)
     }
     
-    func fetchxxxx( )
+    func fetch( )
     {
         
    
         SVProgressHUD.dismiss()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellTwoID")
         
-        
+        // fetches station information from WMATA ApI
         wmata.fetchMetroStations(){(results:SomeThing) in
             
             var mindist = 2000.000
@@ -102,7 +102,7 @@ class NearestTableViewController: UITableViewController {
             stationLat.removeAll()
             stationLong.removeAll()
             
-        
+        //Check for nearest station
             for value in results.Stations{
                 var stationlat=value.Lat
                 var stationlon=value.Lon
@@ -160,7 +160,7 @@ extension NearestTableViewController: LocationDetectorDelegate {
         
         DispatchQueue.main.async {
             
-            self.fetchxxxx()
+            self.fetch()
         
         }
         

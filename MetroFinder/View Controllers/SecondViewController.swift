@@ -29,6 +29,7 @@ class SecondViewController: UITableViewController {
         stationLat.removeAll()
         stationLong.removeAll()
         
+        // fetches station information from WMATA ApI
         wmata.fetchMetroStations(){(results:SomeThing) in
             for value in results.Stations{
                 stationNames.append(value.Name!)

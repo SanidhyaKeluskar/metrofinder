@@ -14,7 +14,7 @@ class MyFavouriteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-  var workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+  var fetchedFavouriteLandmarks = PersistenceManager.sharedInstance.fetchFavouriteLandmarks()
     
     override func viewDidLoad() {
         
@@ -31,7 +31,7 @@ class MyFavouriteViewController: UIViewController {
         landmarkLongititude.removeAll()
         landmarkRating.removeAll()
         
-        for value in workoutstwo{
+        for value in fetchedFavouriteLandmarks{
             landmarkNames.append(value.name)
             landmarkImages.append(value.url)
             landmarkRating.append(value.landmarkRating)
@@ -49,7 +49,9 @@ class MyFavouriteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+        
+        //Fetch favourite Landmarks and display whenever view will appear
+        fetchedFavouriteLandmarks = PersistenceManager.sharedInstance.fetchFavouriteLandmarks()
         super.viewWillAppear(animated)
         print("hiiiii")
         tableView.reloadData()
@@ -60,7 +62,7 @@ class MyFavouriteViewController: UIViewController {
         landmarkRating.removeAll()
         landmarkAddress.removeAll()
         
-        for value in workoutstwo{
+        for value in fetchedFavouriteLandmarks{
             landmarkNames.append(value.name)
             landmarkImages.append(value.url)
             landmarkRating.append(value.landmarkRating)
@@ -78,15 +80,15 @@ class MyFavouriteViewController: UIViewController {
 extension MyFavouriteViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return  workoutstwo.count
+       return  fetchedFavouriteLandmarks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFavouriteLandmark") as! MyFavouriteTableViewCell
         
-        cell.myFavouriteLandmarkname.text = workoutstwo[indexPath.row].name
+        cell.myFavouriteLandmarkname.text = fetchedFavouriteLandmarks[indexPath.row].name
         
-        Alamofire.request(workoutstwo[indexPath.row].url).responseImage(completionHandler: { response in
+        Alamofire.request(fetchedFavouriteLandmarks[indexPath.row].url).responseImage(completionHandler: { response in
             
             if var image = response.result.value{
                 DispatchQueue.main.async {
