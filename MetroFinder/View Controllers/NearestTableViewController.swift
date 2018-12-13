@@ -44,8 +44,7 @@ class NearestTableViewController: UITableViewController {
         
         SVProgressHUD.show(withStatus: "Loading")
         
-       // stationNames.removeAll()
-        if(userlatitude>0.0){
+               if(userlatitude>0.0){
             
             fetchxxxx( )
         }
@@ -54,7 +53,7 @@ class NearestTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      //  workoutstwo = PersistenceManager.sharedInstance.fetchWorkouts()
+      
         super.viewWillAppear(animated)
          stationNames.removeAll()
         stationLat.removeAll()
@@ -121,7 +120,7 @@ class NearestTableViewController: UITableViewController {
                     mindiststationname = value.Name!
                     mynearestStationlat = value.Lat!
                     mynearestStationlong = value.Lon!
-                  //  stationNames.append(value.Name!)
+                 
                 }
                 
             }
@@ -160,8 +159,7 @@ extension NearestTableViewController: LocationDetectorDelegate {
         
         
         DispatchQueue.main.async {
-                //TODO: Show a AlertController with error
-    //    stationNames.removeAll()
+            
             self.fetchxxxx()
         
         }
@@ -171,7 +169,7 @@ extension NearestTableViewController: LocationDetectorDelegate {
     func locationNotDetected() {
         print("no location found :(")
         
-        //TODO: Show a AlertController with error
+    
     }
     
     func locationZipCode(zipcode : String){

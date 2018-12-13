@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
 
         print("Hello")
         
-        // Do any additional setup after loading the view.
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

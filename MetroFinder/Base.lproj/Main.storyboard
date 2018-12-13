@@ -246,22 +246,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7b-zN-UKX">
-                                <rect key="frame" x="20" y="100" width="374" height="197"/>
+                                <rect key="frame" x="56.5" y="100" width="301" height="197"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="323" id="A8U-La-UwQ"/>
+                                    <constraint firstAttribute="width" constant="301" id="9vb-XU-zRC"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="338" id="GQj-Np-rqX"/>
-                                    <constraint firstAttribute="height" constant="197" id="Ifq-GJ-f4F"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="PD5-uJ-76r"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="158" id="Rom-za-mog"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3s5-nX-5oL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="PlaceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3s5-nX-5oL">
                                 <rect key="frame" x="12" y="309" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-IE-ocH">
-                                <rect key="frame" x="268" y="820" width="134" height="30"/>
+                                <rect key="frame" x="260" y="820" width="134" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.32992403465168629" blue="0.17014514745262255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="XXQ-tW-eOi"/>
@@ -294,7 +293,7 @@
                                     <action selector="shareButton:" destination="aXv-91-Jzu" eventType="touchUpInside" id="eZu-Ym-eEz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tre-5r-0Jd">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tre-5r-0Jd">
                                 <rect key="frame" x="140" y="385" width="134" height="30"/>
                                 <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -307,13 +306,13 @@
                                     <action selector="mapsButton:" destination="aXv-91-Jzu" eventType="touchUpInside" id="4rC-Tp-cNh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqv-3R-t2n">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqv-3R-t2n">
                                 <rect key="frame" x="12" y="342" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTT-Oj-O9s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTT-Oj-O9s">
                                 <rect key="frame" x="291" y="309" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -330,11 +329,10 @@
                             <constraint firstItem="qqv-3R-t2n" firstAttribute="leading" secondItem="SFW-ck-Obz" secondAttribute="leading" constant="12" id="4JV-ar-d6Y"/>
                             <constraint firstItem="zhs-xH-mWk" firstAttribute="leading" secondItem="SFW-ck-Obz" secondAttribute="leading" constant="12" id="5r0-Xh-cSJ"/>
                             <constraint firstItem="tre-5r-0Jd" firstAttribute="centerX" secondItem="OPl-4d-tCz" secondAttribute="centerX" id="6Y3-83-eTE"/>
-                            <constraint firstItem="SFW-ck-Obz" firstAttribute="trailing" secondItem="1Kl-IE-ocH" secondAttribute="trailing" constant="12" id="71V-1v-ttI"/>
-                            <constraint firstAttribute="trailing" secondItem="1Kl-IE-ocH" secondAttribute="trailing" constant="12" id="7qc-gP-RBf"/>
                             <constraint firstItem="SFW-ck-Obz" firstAttribute="bottom" secondItem="1Kl-IE-ocH" secondAttribute="bottom" constant="12" id="Ccn-8t-8lC"/>
                             <constraint firstItem="SFW-ck-Obz" firstAttribute="bottom" secondItem="zhs-xH-mWk" secondAttribute="bottom" constant="12" id="EHM-8b-ig4"/>
                             <constraint firstItem="pTT-Oj-O9s" firstAttribute="top" secondItem="T7b-zN-UKX" secondAttribute="bottom" constant="12" id="FuQ-m0-eDA"/>
+                            <constraint firstItem="SFW-ck-Obz" firstAttribute="trailing" secondItem="1Kl-IE-ocH" secondAttribute="trailing" constant="20" id="H1p-E7-kBZ"/>
                             <constraint firstItem="tre-5r-0Jd" firstAttribute="top" secondItem="qqv-3R-t2n" secondAttribute="bottom" constant="12" id="M4n-ue-EUp"/>
                             <constraint firstItem="T7b-zN-UKX" firstAttribute="centerX" secondItem="OPl-4d-tCz" secondAttribute="centerX" id="S81-49-D4M"/>
                             <constraint firstItem="qqv-3R-t2n" firstAttribute="trailing" secondItem="OPl-4d-tCz" secondAttribute="trailingMargin" id="Vuw-Lj-P0j"/>

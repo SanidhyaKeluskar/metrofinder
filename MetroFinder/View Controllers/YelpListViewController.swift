@@ -45,10 +45,9 @@ class YelpListViewController: UIViewController {
         landmarkAddress.removeAll()
         
         SVProgressHUD.show(withStatus: "Loading")
-   //     if check != stationNames[myindex] {
-     //       check = stationNames[myindex]
+   
             callyelp()
-   //     }
+ 
 
       
     }
@@ -67,10 +66,7 @@ class YelpListViewController: UIViewController {
                 landmarkAddress.append((value.location?.address1!)! + " " + (value.location?.city!)!)
                 
             }
-            for name in landmarkNames{
-                
-                //   print(name)
-            }
+            
             
             SVProgressHUD.dismiss()
         
