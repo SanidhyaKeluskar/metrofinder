@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+struct visionapiresponse : Codable{
+    let responses : [xxxxxxxx]
+}
+
+struct xxxxxxxx : Codable{
+    let textAnnotations : [yyyyy]
+   
+}
+
+struct yyyyy : Codable{
+    let locale : String?
+    //let locale : String?
+    let description : String?
+}
+
+
+
